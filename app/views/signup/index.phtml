@@ -1,0 +1,61 @@
+<h2>
+    Add User
+</h2>
+
+<?php echo $this->tag->form("signup/register"); ?>
+
+    <p>
+        <label for="firstname">
+            First Name:
+        </label>
+        <br/>
+        <?php echo $this->tag->textField("firstname"); ?>
+    </p>
+
+    <p>
+        <label for="lastname">
+            Last Name:
+        </label>
+        <br/>
+        <?php echo $this->tag->textField("lastname"); ?>
+    </p>
+
+
+    <p>
+        <label for="email">
+            E-Mail:
+        </label>
+        <br/>
+        <?php echo $this->tag->textField("email"); ?>
+    </p>
+    <p>
+            Gender:
+        <br/>
+        Male
+        <?php echo $this->tag->radioField(["gender","value" => "M"]); ?>
+        Female
+        <?php echo $this->tag->radioField(["gender","value" => "F"]); ?>
+        </p>
+        <p>
+        <label for="education">
+            Education:
+        </label>
+        <br/>        
+        <?php echo $this->tag->select( "education",
+        [
+            "BE" => "BE",
+            "BSC" => "BSC",
+            "BTech" => "BTech"
+        ]); ?> </p>
+        <p>
+        <label for="skills">
+            Skills:
+        </label>
+        <br/>   
+            <?php echo $this->tag->textArea("skills"); ?>
+        </p>
+ <p>
+        <?php echo $this->tag->submitButton("Submit"); ?>
+    </p>
+
+</form>

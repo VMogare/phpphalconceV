@@ -1,0 +1,57 @@
+<?php
+	// Required
+$config = [
+    "host"     => "127.0.0.1",
+    "username" => "root",
+    "dbname"   => "test",
+];
+
+// Optional
+$config["persistent"] = false;
+
+// Create a connection
+$connection = new \Phalcon\Db\Adapter\Pdo\Mysql($config);
+
+$sql = "SELECT * FROM users";
+
+// Send a SQL statement to the database system
+$result = $connection->query($sql);
+?>
+<?php 
+
+//Show data fetched
+?>
+<h2>List Users</h2>
+<table style="width:100%" border="1" cellspacing="0" bgcolor="#EEE7C3">
+  <tr align="left">
+    <th>Firstname</th>
+    <th>Lastname</th> 
+    <th>Email</th>
+    <th>Gender</th>
+    <th>Education</th>
+    <th>Skills</th>
+  </tr>
+<?php
+while ($users = $result->fetch()) {
+?>
+<tr>
+<td>
+   <?php echo $users["firstname"]; ?>
+</td>
+<td>
+   <?php echo $users["lastname"]; ?>
+</td>
+<td>
+   <?php echo $users["email"]; ?>
+</td>
+<td>
+   <?php echo $users["gender"]; ?>
+</td>
+<td>
+   <?php echo $users["education"]; ?>
+</td>
+<td>
+   <?php echo $users["skills"]; ?>
+</td>	
+</tr>
+<?php } ?>
