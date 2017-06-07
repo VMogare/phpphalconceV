@@ -37,7 +37,7 @@ $di->set(
     }
 );
 
-// Setup a base URI so that all generated URIs include the "tutorial" folder
+// Setup a base URI so that all generated URIs include the "signupapp" folder
 $di->set(
     "url",
     function () {
