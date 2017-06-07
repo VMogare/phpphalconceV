@@ -1,0 +1,13 @@
+-------Users table to be created first in mysql-----
+
+create database test;
+
+create table "users"('id' int(10) unsigned NOT NULL AUTO_INCREMENT,
+"firstname" varchar(70) NOT NULL,
+"lastname" varchar(70) NOT NULL,
+"email" varchar(70) NOT NULL UNIQUE,
+"gender" char(1) NOT NULL,
+"education" varchar(70) NOT NULL,
+"skills" varchar(770) NOT NULL,
+PRIMARY KEY("id")
+);
